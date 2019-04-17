@@ -1,0 +1,23 @@
+<form class="input-wrapper">
+	<input type="text"
+		placeholder="What's happening?"
+		id="tweet-input"
+		value={{this.text}}
+		on="submit"
+		oninput={{action this.onInput value="target.value"}}
+	>
+	
+	{{#if this.text}}
+		<button
+			{{action this.onSubmit}}
+		>
+			Tweet
+		</button>
+	{{/if}}
+
+	{{#if this.error}}
+		<p class="error-text">
+			Ocurrió un error, inténtelo de nuevo más tarde
+		</p>
+	{{/if}}
+</form>
