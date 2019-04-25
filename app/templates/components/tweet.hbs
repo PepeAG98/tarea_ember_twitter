@@ -2,13 +2,15 @@
 	<div>
 		<img
 			class="small-avatar"
-			src="https://gcdn.emol.cl/mascotas/files/2018/03/perro-raro.jpg"
+			src={{@data.user.avatar}}
 		/>
+		
 	</div>
 	<div class="column tweet-content">
 		<div class="row">
 			<p class="user-name">
-				{{if @data.userName @data.userName 'Pepe'}}
+				<LinkTo @route="app.profile" @model={{@data.user.id}}>{{if @data.user.username @data.user.username 'Pepe'}}</LinkTo>
+				
 			</p>
 			<span class="timestamp">{{@data.createdAt}}</span>
 		</div>
